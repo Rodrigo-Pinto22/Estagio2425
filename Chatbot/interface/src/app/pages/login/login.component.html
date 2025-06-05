@@ -1,0 +1,22 @@
+<div class="login-container">
+    <div class="login-box">
+      <h1>Assistente Técnico</h1>
+  
+      <form (ngSubmit)="login()">
+        <div class="form-group">
+          <label for="ipn">IPN</label>
+          <input id="ipn" type="text" [(ngModel)]="ipn" name="ipn" required />
+        </div>
+  
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input id="password" type="password" [(ngModel)]="password" name="password" required />
+        </div>
+  
+        <button type="submit" class="login-button">Entrar</button>
+  
+        <div *ngIf="error" class="error-message">{{ error }}</div>
+      </form>
+    </div>
+  </div>
+  

@@ -1,0 +1,23 @@
+<div class="chat-container">
+
+    <div class="header">
+      <img src="assets/logo.png" alt="Logo" class="logo" (click)="goHome()" />
+    </div>
+
+    <div class="messages"> 
+      <div *ngFor="let message of messages" [ngClass]="message.role">
+       <!--<p>{{ message.content }}</p>-->
+       <p [innerHTML]="formatMessage(message.content)"></p>
+
+      </div>
+    </div>
+  
+    <div class="input-area">
+      <input
+        [(ngModel)]="userInput"
+        (keydown.enter)="sendMessage()"
+        placeholder="Escreve a tua pergunta..."
+      />
+    </div>
+  </div>
+  
